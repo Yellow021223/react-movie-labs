@@ -86,3 +86,19 @@ export const getMovies = () => {
         throw error
      });
     };
+
+    export const getUpComingMovies = () => {
+        return fetch(
+          `https://api.themoviedb.org/3/movie/upcoming?api_key=58ac426817dbdd46e759d1ae7cc7bbb3&language=en-US&page=1`
+        ).then((response) => {
+          if (!response.ok) {
+            return response.json().then((error) => {
+              throw new Error(error.status_message || "Something went wrong");
+            });
+          }
+          return response.json();
+        })
+        .catch((error) => {
+            throw error
+        });
+      };
