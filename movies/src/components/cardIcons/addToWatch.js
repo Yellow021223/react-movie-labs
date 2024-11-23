@@ -9,6 +9,7 @@ const AddToWatchIcon = ({ movie }) => {
   const handleAddToWatch = (e) => {
     e.preventDefault();
     context.addToWatch(movie);
+    
   };
 
   return (
