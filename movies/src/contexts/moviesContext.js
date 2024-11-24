@@ -7,6 +7,7 @@ const MoviesContextProvider = (props) => {
   const [myReviews, setMyReviews] = useState({});
   const [towatch, setToWatch] = useState([]);
   const [watched, setWatched] = useState([]); // 添加已观看列表
+  const [page, setPage] = useState(1); 
 
   // 添加评论
   const addReview = (movie, review) => {
@@ -45,6 +46,10 @@ const MoviesContextProvider = (props) => {
     setToWatch(towatch.filter((mId) => mId !== movie.id));
   };
 
+  const addNewPage = (event ,newePage) => {
+    setPage(newePage)
+  };
+
   // 标记为已观看
   const markAsWatched = (movie) => {
     // 从 "To Watch" 中移除并添加到 "Watched" 列表
@@ -66,6 +71,8 @@ const MoviesContextProvider = (props) => {
         addToWatch,
         removeFromToWatch,
         markAsWatched,
+        page,
+        addNewPage,
       }}
     >
       {props.children}

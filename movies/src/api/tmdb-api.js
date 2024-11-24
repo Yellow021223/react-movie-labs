@@ -1,6 +1,10 @@
-export const getMovies = () => {
+export const getMovies = (args) => {
+  console.log(args)
+  const [, pagePart] = args.queryKey;
+    const { page } = pagePart;
+    console.log(page)
     return fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=58ac426817dbdd46e759d1ae7cc7bbb3&language=en-US&include_adult=false&include_video=false&page=1`
+      `https://api.themoviedb.org/3/discover/movie?api_key=58ac426817dbdd46e759d1ae7cc7bbb3&language=en-US&include_adult=false&include_video=false&page=${page}`
     ).then((response) => {
       if (!response.ok) {
         return response.json().then((error) => {
