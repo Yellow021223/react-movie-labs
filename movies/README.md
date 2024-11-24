@@ -4,7 +4,7 @@ Name: Rundong Huang
 
 ## Overview.
 
-[A brief statement on the content of this repository.]
+I added three new pages: TopRatedPage, TrendingPage, and ToWatchList. In addition, I also implemented pagination, indexing, and categorization features.
 
 ### Features.
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
